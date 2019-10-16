@@ -60,6 +60,6 @@
 
 #### **CSVW Creation** <h4>
 
-* No minimum value but the value cannot ve negative
+* No minimum value but the value cannot be negative
 
 
