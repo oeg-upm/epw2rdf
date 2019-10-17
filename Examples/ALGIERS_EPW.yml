@@ -1,20 +1,4 @@
-
-import os
-
-
-def removeFileYML(document):
-    if os.path.exists("" + document + "_EPW.yml"):
-        os.remove("" + document + "_EPW.yml")
-        return
-    else:
-        return
-
-
-
-def createFileYML(document):
-    documentCTD=open("" + document + ".yml", "a+")
-
-    documentCTD.write("""prefixes:
+prefixes:
   ex: "http://example.com/"
   rr: <http://www.w3.org/ns/r2rml#> .
   rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -27,16 +11,18 @@ def createFileYML(document):
   @prefix bv: <http://bio2rdf.org/bio2rdf_vocabulary:> .
   @prefix homogv: <http://bio2rdf.org/homologene_vocabulary:> .
   @prefix epw: <http://epw.linkeddata.es/vocab#> .
-  @prefix epw""" + document.lower() +  """: <http://epw.linkeddata.es/resources/""" + document.lower() +  """/> .
+  @prefix epwalgiers: <http://epw.linkeddata.es/resources/algiers/> .
+  #### CAMBIAR AQUI PARA QUE SE HAGA AUTOMÁTICO
 
-  mappings:
-  """+ document + """:
+
+mappings:
+  ALGIERS: #### CAMBIAR AQUI PARA QUE SE HAGA AUTOMÁTICO
     sources:
-      - ['"""+ document + """.csv'~csv]
-    s: http://epw.linkeddata.es/resources/""" + document.lower() +  """/$(year)-$(month)-$(day)-$(hour)-$(minute)
+      - ['ALGIERS.csv'~csv] #### CAMBIAR AQUÍ PARA QUE SEA AUTOMÁTICO
+    s: http://epw.linkeddata.es/resources/algiers/$(year)-$(month)-$(day)-$(hour)-$(minute)  #### CAMBIAR AQUÍ PARA QUE SEA AUTOMÁTICO
     po:
       - [a, epw:EPW]
-      - [epw:city, http://dbpedia.org/resource/""" + document.lower().title() + """]
+      - [epw:city, http://dbpedia.org/resource/Algiers] #### CAMBIAR AQUÍ PARA QUE SEA AUTOMÁTICO
       - [epw:year, $(year), xsd:integer]
       - [epw:month, $(month), xsd:integer]
       - [epw:day, $(day), xsd:integer]
@@ -72,6 +58,3 @@ def createFileYML(document):
       - [epw:albedo, $(albedo), xsd:decimal]
       - [epw:liquidPrecipitationDepth, $(liquidprecipitationdepth), xsd:decimal]
       - [epw:liquidPrecipitationQuantity, $(liquidprecipitationquantity), xsd:decimal]
-""".replace("'",'"'))
-
-    documentCTD.close()

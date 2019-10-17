@@ -15,6 +15,8 @@ from Functions.makeMetadata import removeFileJSON,createFileJSON
 
 from Functions.getDataFromJson import getJsonData
 
+from Functions.createYarml import removeFileYML,createFileYML
+
 
 
 removeFileJSON()
@@ -93,6 +95,9 @@ for continent in continent.find_all('a', attrs={"class": "btn btn-default left-j
 
                     removeFileTTL(city)
                     createFileTTL(city)
+
+                    removeFileYML(city)
+                    createFileYML(city)
 
                     makeSH(propertiesFile)
 
