@@ -6,7 +6,7 @@ def getJsonData(city):
 
     city += ".csv"
 
-    with open('csv-metadata.json') as f:
+    with open('Data/csv-metadata.json') as f:
         data = json.load(f)
 
     numberRowstoSkip = data['skipRows']

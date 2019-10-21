@@ -1,14 +1,9 @@
 
-
-
-
-
-
 import os
 
 def removeFileTTL(document):
-    if os.path.exists("" + document + "_EPW.r2rml.ttl"):
-        os.remove("" + document + "_EPW.r2rml.ttl")
+    if os.path.exists("Data/" + document + "_EPW.r2rml.ttl"):
+        os.remove("Data/" + document + "_EPW.r2rml.ttl")
         return
     else:
         return
@@ -16,7 +11,7 @@ def removeFileTTL(document):
 
 
 def createFileTTL(document):
-    documentCTD=open("" + document + "_EPW.r2rml.ttl", "a+")
+    documentCTD=open("Data/" + document + "_EPW.r2rml.ttl", "a+")
 
     documentCTD.write("""@prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .

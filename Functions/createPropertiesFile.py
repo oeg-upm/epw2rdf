@@ -2,8 +2,8 @@
 import os
 
 def removeFileProperties(document):
-    if os.path.exists(""  + document + "EPW-batch.morph.properties"):
-        os.remove(""  + document + "EPW-batch.morph.properties")
+    if os.path.exists("Data/"  + document + "EPW-batch.morph.properties"):
+        os.remove("Data/"  + document + "EPW-batch.morph.properties")
         return
     else:
         return
@@ -11,14 +11,14 @@ def removeFileProperties(document):
 
 
 def createFileProperties(document):
-    documentCTD=open("" + document + "_EPW-batch.morph.properties", "a+")
-    propertiesFile = "" + document + "_EPW-batch.morph.properties"
+    documentCTD=open("Data/" + document + "_EPW-batch.morph.properties", "a+")
+    propertiesFile = "Data/" + document + "_EPW-batch.morph.properties"
 
-    documentCTD.write("""mappingdocument.file.path="""+ document +"""_EPW.r2rml.ttl
-output.file.path=""" + document + """_EPW-batch-result-csv.nt
+    documentCTD.write("""mappingdocument.file.path=Data/"""+ document +"""_EPW.r2rml.ttl
+output.file.path=Data/""" + document + """_EPW-batch-result-csv.nt
 output.rdflanguage=N-TRIPLE
 
-csv.file.path = """ + document + """.csv
+csv.file.path = Data/""" + document + """.csv
 no_of_database=1
 database.name[0]=morphcsv
 database.driver[0]=org.h2.Driver
@@ -32,9 +32,3 @@ database.type[0]=CSV""")
     return propertiesFile
 
 
-
-# document = 'ABU DHABI'
-
-
-# removeFileProperties(document)
-# createFileProperties(document)

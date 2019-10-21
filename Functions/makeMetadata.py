@@ -4,8 +4,8 @@ import json
 
 
 def removeFileJSON():
-    if os.path.exists("csv-metadata.json"):
-        os.remove("csv-metadata.json")
+    if os.path.exists("Data/csv-metadata.json"):
+        os.remove("Data/csv-metadata.json")
         return
     else:
         return
@@ -256,12 +256,12 @@ def createFileJSON(dataset):
       }
     }
 
-    with open('csv-metadata.json') as f:
+    with open('Data/csv-metadata.json') as f:
         data = json.load(f)
 
     data['tables'].append(a_dict)
 
-    with open('csv-metadata.json', 'w') as f:
+    with open('Data/csv-metadata.json', 'w') as f:
         json.dump(data, f, indent=4)
         
     return cityName

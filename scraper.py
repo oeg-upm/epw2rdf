@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import urllib.request
 import time
+import os
 
 from Functions.parseCSV import parseToCSV
 
@@ -21,7 +22,7 @@ from Functions.createYarml import removeFileYML,createFileYML
 
 removeFileJSON()
 
-documentJSON=open("csv-metadata.json", "a+")
+documentJSON=open("Data/csv-metadata.json", "a+")
 
 documentJSON.write("""{
 "@context": "http://www.w3.org/ns/csvw",

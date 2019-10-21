@@ -3,8 +3,8 @@ import os
 
 
 def removeFileYML(document):
-    if os.path.exists("" + document + "_EPW.yml"):
-        os.remove("" + document + "_EPW.yml")
+    if os.path.exists("Data/" + document + "_EPW.yml"):
+        os.remove("Data/" + document + "_EPW.yml")
         return
     else:
         return
@@ -12,7 +12,7 @@ def removeFileYML(document):
 
 
 def createFileYML(document):
-    documentCTD=open("" + document + ".yml", "a+")
+    documentCTD=open("Data/" + document + ".yml", "a+")
 
     documentCTD.write("""prefixes:
   ex: "http://example.com/"
