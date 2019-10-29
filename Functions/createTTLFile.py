@@ -33,7 +33,7 @@ def createFileTTL(document):
 	];
 
 	rr:subjectMap [
-		a rr:Subject;
+		rr:Subject;
 		rr:termType rr:IRI;
 		rr:class epw:EPW;
 		rr:template "http://epw.linkeddata.es/resources/""" + document.lower() +  """/{YEAR}-{MONTH}-{DAY}-{HOUR}-{MINUTE}";
